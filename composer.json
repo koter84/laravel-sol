@@ -1,12 +1,16 @@
 {
-    "name": "scollins/steam-auth",
-    "description": "Simple Steam Open ID Login for Laravel 5.1",
-    "keywords": ["steam", "OpenID", "steam api", "laravel5", "laravel"],
+    "name": "koter84/sol-auth",
+    "description": "Simple Sol Open ID Login for Laravel 5.1",
+    "keywords": ["OpenID", "scouting", "sol", "laravel5", "laravel"],
     "license": "MIT",
     "authors": [
         {
             "name": "scollins",
             "email": "theatrepro11@gmail.com"
+        },
+        {
+            "name": "koter84",
+            "email": "koter84@gmail.com"
         }
     ],
     "require": {
@@ -18,7 +22,7 @@
             "src/migrations"
         ],
         "psr-4": {
-            "SCollins\\SteamAuth\\": "src/SCollins/SteamAuth"
+            "Koter84\\SolAuth\\": "src/Koter84/SolAuth"
         }
     },
     "minimum-stability": "dev"

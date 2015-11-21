@@ -1,10 +1,10 @@
 <?php
-namespace SCollins\SteamAuth\Http;
+namespace Koter84\SolAuth\Http;
 
 use Closure;
 use Illuminate\Support\Facades\Session;
 
-class SteamLogin
+class SolLogin
 {
     /**
      * Handle an incoming request and check for playerId in the session
@@ -16,9 +16,9 @@ class SteamLogin
      */
     public function handle($request, Closure $next)
     {
-        if (Session::has('playerId')) {
+        if (Session::has('email')) {
             return $next($request);
         }
-        return redirect(config('steam.loginUrl', '/'));
+        return redirect('/'.config('sol.loginUrl', 'sollogin'));
     }
 }

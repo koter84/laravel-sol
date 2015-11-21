@@ -1,9 +1,9 @@
 <?php
-namespace SCollins\SteamAuth;
+namespace Koter84\SolAuth;
 
 use Illuminate\Support\ServiceProvider;
 
-class SteamAuthServiceProvider extends ServiceProvider {
+class SolAuthServiceProvider extends ServiceProvider {
 
 	/**
 	 * Indicates if loading of the provider is deferred.
@@ -19,13 +19,23 @@ class SteamAuthServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
+		// register this ServiceProvider with auth...
+		// https://laracasts.com/discuss/channels/laravel/replacing-the-laravel-authentication-with-a-custom-authentication
+//		$this->app['auth']->extend('sol',function()
+//		{
+//			return new SolUserProvider();
+//		});
+
 		if (! $this->app->routesAreCached()) {
 	        require __DIR__.'/Http/routes.php';
 	    }
 	    require_once __DIR__.'/Classes/LightOpenID.php';
-	    
+
+        $this->loadViewsFrom(__DIR__.'/Views', 'sol-auth');
+
 	    $this->publishes([
-	        __DIR__.'/Config/steam.php' => config_path('steam.php'),
+	        __DIR__.'/Config/sol.php' => config_path('sol.php'),
+	        __DIR__.'/Views' => base_path('resources/views/vendor/sol-auth'),
 	    ]);
 	}
 

@@ -1,12 +1,12 @@
 <?php
-namespace SCollins\SteamAuth;
+namespace Koter84\SolAuth;
  
 use Illuminate\Support\Facades\Facade;
  
-class SteamAuthFacade extends Facade {
+class SolAuthFacade extends Facade {
  
     protected static function getFacadeAccessor() {
-        return 'SCollins\SteamAuth\Http\SteamController';
+        return 'Koter84\SolAuth\Http\SolController';
     }
  
 }
