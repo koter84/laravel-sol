@@ -44,7 +44,7 @@ class SolController extends Controller {
             $openid->identity = 'https://login.scouting.nl/user/'.$input['username'];
             $openid->required = array('contact/email','namePerson', 'namePerson/friendly');
             $openid->optional = array('birthDate','person/gender','pref/language','pref/timezone');
-            echo $openid->authUrl();
+            //echo $openid->authUrl();
             return redirect($openid->authUrl());
         } elseif ($openid->mode == 'cancel') {
             echo 'cancel auth';
