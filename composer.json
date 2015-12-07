@@ -1,5 +1,5 @@
 {
-    "name": "koter84/sol-auth",
+    "name": "koter84/laravel-sol",
     "description": "Simple Sol Open ID Login for Laravel 5.1",
     "keywords": ["OpenID", "scouting", "sol", "laravel5", "laravel"],
     "license": "MIT",
